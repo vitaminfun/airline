@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="flightsAdm.js"></script>
+    <script src="flightAjax.js" defer></script>
+    <script src="sendFlight.js" defer></script>
+    <script src="addFlight.js" defer></script>
+    <script src="toOrder.js" defer></script>
+    <script src="deleteFlight.js" defer></script>
+    <style>
+        #contentTable, th, td {
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+<h2 align = "center">Flight editing</h2>
+<br/><br/>
+<table id="contentTable" width = "80%"  align = "center" cellspacing="0">
+    <thead>
+    <tr>
+        <th>choice</th>
+        <th>id_flight</th>
+        <th>id_airplane</th>
+        <th>FROM</th>
+        <th>TO</th>
+        <th>DATE</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+    function back() {
+        document.location.replace("index.html")
+    }
+</script>
+<br>
+<br>
+<br>
+<p align = "center" >
+    <input  type="button" value="add flight"  onclick="addFlight()" >
+    <input  type="button" value="update flight"  onclick="toOrder()" >
+    <input  type="button" value="delete flight"  onclick="deleteFlight()" >
+</p>
+<br>
+<form id = "formFlight" action ='./updateFlight' enctype="text/plaine" method = "post">
+    <input id = "idFlight" type="text" name="idFlight" value="" hidden>
+</form>
+
+<form id = "formFlightDelete" action ='./deleteFlight' enctype="text/plaine" method = "post">
+    <input id = "idFlightDelete" type="text" name="idFlightDelete" value="" hidden>
+</form>
+
+<p align = "center" ><input  type="button" value="<< back"  onclick="back()" ></p>
+
+</body>
+</html>

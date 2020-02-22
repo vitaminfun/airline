@@ -1,0 +1,1 @@
+airplaneAjax('POST','sendAirplane', null ,true);

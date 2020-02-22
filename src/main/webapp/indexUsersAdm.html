@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="userAjax.js" defer></script>
+    <script src="sendUser.js" defer></script>
+    <script src="addUser.js" defer></script>
+    <script src="selectionUpdUser.js" defer></script>
+    <script src="deleteUser.js" defer></script>
+    <style>
+        #contentTable, th, td {
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+<h2 align = "center">User editing</h2>
+<br/><br/>
+<table id="contentTable" width = "80%"  align = "center" cellspacing="0">
+    <thead>
+    <tr>
+        <th>choice</th>
+        <th>id user</th>
+        <th>login</th>
+        <th>first name</th>
+        <th>last name</th>
+        <th>email</th>
+        <th>password</th>
+        <th>admin</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+    function back() {
+        document.location.replace("indexAdmin.html")
+    }
+</script>
+<br>
+<br>
+<br>
+<p align = "center" >
+    <input  type="button" value="add user"  onclick="addUser()" >
+    <input  type="button" value="update user"  onclick="selectionUpdUser()" >
+    <input  type="button" value="delete user"  onclick="deleteUser()" >
+</p>
+<br>
+<form id = "formUser" action ='./updateUser' enctype="text/plaine" method = "post">
+    <input id = "idUser" type="text" name="idUser" value="" hidden>
+</form>
+
+<form id = "formUserDelete" action ='./deleteUser' enctype="text/plaine" method = "post">
+    <input id = "idUserDelete" type="text" name="idUserDelete" value="" hidden>
+</form>
+
+<p align = "center" ><input  type="button" value="<< back"  onclick="back()" ></p>
+</body>
+</html>

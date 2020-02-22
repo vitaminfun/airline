@@ -1,0 +1,1 @@
+userAjax('POST','sendUser', null ,true);

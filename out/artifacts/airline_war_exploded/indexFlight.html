@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <style>
+        #contentTable, th, td {
+            border: solid 1px black;
+        }
+    </style>
+
+	<script src="flightAjax.js" defer></script>
+    <script src="sendFlight.js" defer></script>
+
+	<script src="toOrder.js" defer></script>
+	<script src="orderAjax.js" defer></script>
+
+
+</head>
+
+<script>
+	function back() {
+			document.location.replace("index.html")
+	}
+
+</script>
+
+<body>
+	<h2 align = "center">Available flights</h2>
+	<br/><br/>
+	<table id="contentTable" width = "80%"  align = "center" cellspacing="0">
+		<thead>
+		<tr>
+			<th>choise</th>
+			<th>id_flight</th>
+			<th>id_airplane</th>
+			<th>FROM</th>
+			<th>TO</th>
+			<th>DATE</th>
+		</tr>
+		</thead>
+		<tbody id="tableBody"></tbody>
+	</table>
+	<br>
+	<p align = "center" ><input  type="button" value="to order"  onclick="toOrder()"  ></p>
+	<br>
+	<form id = "formFlight" action ='./getOptions' enctype="text/plaine" method = "post">
+		<input id = "idFlight" type="text" name="idFlight" value="" hidden>
+	</form>
+	<br>
+	<p align = "center" ><input  type="button" value="<< back"  onclick="back()" ></p>
+
+
+
+</body>
+</html>

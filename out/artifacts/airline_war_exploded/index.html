@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Welcome</title>
+	<style>
+		input[data-rule].valid{
+			border: 2px solid green;
+		}
+		input[data-rule].invalid{
+			border: 2px solid red;
+		}
+		#linkForAuth{
+			cursor: pointer;
+		}
+		#linkForReg{
+			cursor: pointer;
+		}
+		label{
+			width:150px;
+			display: inline-block;
+		}
+	</style>
+	<script src="auth.js"></script>
+	<script src="reg.js"></script>
+	<script src="ajax.js"></script>
+	<script src="sendFlight.js"></script>
+	<script src="ajaxFlight.js"></script>
+
+</head>
+
+<body>
+<h2 align="center">Welcome to the service for searching and selling airline tickets</h2>
+<br>
+	<p id="linkForAuth" onclick="showFormAuth()" align = "center">Authorization </p>
+	<p id="linkForReg" onclick="showFormReg()" align = "center">Registration</p>
+	<form id="auth" hidden align="center">
+		<p><label> Login: <input id="nameAuth" name="user" autofocus required placeholder="Enter login" data-rule="login"></label></p>
+		<p><label> Password: <input id="passAuth" name="pass" type = "password" required placeholder="Enter password" data-rule="password"></label></p>
+		<p><input  type="button" value="Sing in"  onclick="sendAuth()"></p>
+	</form>
+
+
+
+
+	<form id="reg" align="center" hidden>
+		<p><label> Login: <input id="nameReg" name="userReg" autofocus required placeholder="Enter login" data-rule="login"></label></p>
+		<p><label> First Name: <input id="firstName" name="firstName" required placeholder="Enter first name" data-rule="login"></label></p>
+		<p><label> Last Name: <input id="lastName" name="lastName" required placeholder="Enter last name" data-rule="login"></label></p>
+		<p><label> Email: <input id="emailReg" name="emailReg" required placeholder="Enter email" data-rule="email"></label></p>
+		<p><label> Password: <input id= "passReg" name="passReg" type = "password" required placeholder="Enter password" data-rule="password"></label></p>
+		<p><input id="button" type="button" value="Registration" onclick="sendReg()"></p>
+	</form>
+	<br>
+	<br>
+	<br>
+	<div id="ResponseName"></div>
+
+	<script>
+		let inputs = document.querySelectorAll('input[data-rule]');
+
+
+		for( let input of inputs){
+			input.addEventListener('blur', function() {
+				let rule = this.dataset.rule;
+				let value = this.value;
+				let check;
+
+				switch (rule) {
+					case 'password':
+						check = /^\d+$/.test(value);
+						break;
+					case 'login':
+						check = /^[a-z][a-z0-9]*?([-_][a-z0-9]+){0,2}$/i.test(value);
+						break;
+					case 'email':
+						check =/.+@.+\..+/i.test(value);
+						break;
+				}
+				this.classList.remove('invalid');
+				this.classList.remove('valid');
+				if (check){
+					this.classList.add('valid');
+
+				} else{
+					this.classList.add('invalid');
+
+				}
+			});
+		}
+	</script>
+</body>
+</html>

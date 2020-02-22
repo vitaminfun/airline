@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function back() {
+        document.location.replace("index.html")
+    }
+</script>
+<h2 align="center">Adding Airplane</h2>
+<br>
+<br>
+<form align="center" id="addAirplane" action='./createAirplane' method="post">
+    <input id = "name" type="text" name="name" value="" placeholder="airplane name ">
+    <input id = "numberOfSeats" type="text" name="numberOfSeats" value="" placeholder="number of seats">
+    <input id = "create" type="submit" name="create" value="create airplane">
+</form>
+<br>
+<br>
+<p align = "center" ><input  type="button" value="<< back"  onclick="back()" ></p>
+</body>
+</html>

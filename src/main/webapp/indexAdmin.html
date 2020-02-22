@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="ajax.js" defer></script>
+    <script src="flightsAdm.js" defer></script>
+    <script src="airplanesAdm.js" defer></script>
+    <script src="airplaneAjax.js" defer></script>
+    <script src="usersAdm.js" defer></script>
+</head>
+<body>
+
+<h2 align="center">Management</h2>
+<br>
+<br>
+<br>
+
+<script>
+    function back() {
+        document.location.replace("index.html")
+    }
+</script>
+<p align="center">
+    <input id="flights" type="button" value="flight management" onclick="flightsAdm()">
+    <input id="airplanes" type="button" value="airplanes management" onclick="airplanesAdm()">
+    <input id="users" type="button" value="users management" onclick="usersAdm()">
+</p>
+<br>
+<br>
+<p align = "center" ><input  type="button" value="<< back"  onclick="back()" ></p>
+</body>
+</html>
